@@ -15,4 +15,5 @@ class Pokemon
     else
       sql = <<-SQL
       INSERT INTO pokemon ()
+  end
 end
