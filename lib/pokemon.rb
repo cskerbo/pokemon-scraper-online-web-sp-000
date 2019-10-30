@@ -14,6 +14,12 @@ class Pokemon
       self.update
     else
       sql = <<-SQL
-      INSERT INTO pokemon ()
+      INSERT INTO pokemon (name, type)
+      VALUES (?, ?)
+      SQL
+      @db.execute(sql, self.name, self.type)
+      @id = @db.execute(SELECT last_insert_rowid() FROM pokemon)[0][0]
+    end
   end
+
 end
